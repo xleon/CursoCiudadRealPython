@@ -92,7 +92,7 @@ class FightGame:
         # Comprehensive list de python
         current_players = [x for x in self.players if x.lives > 0]
 
-        # ¿hay más de un jugador?
+        # ¿hay más de un jugador? holasdf
         if len(current_players) < 2:
             print(Fore.RED + 'No hay sufucientes jugadores' + Fore.WHITE)
             return
