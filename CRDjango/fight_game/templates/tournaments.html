@@ -1,0 +1,14 @@
+<h1>Torneos</h1>
+
+<ul>
+    {% for tournament in tournaments %}
+        <li>
+            <p>{{ tournament.name }}</p>
+            <ul>
+                {% for fighter in tournament.fighters.all %}
+                    <li>{{ fighter.alias }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,7 @@
+<h1>Combates</h1>
+
+<ul>
+    {% for combat in object_list %}
+        <li>{{ combat.fighter1.alias }} vs {{ combat.fighter2.alias }}</li>
+    {% endfor %}
+</ul>

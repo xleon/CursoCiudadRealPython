@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game index</title>
+</head>
+<body>
+
+<h1>Torneos</h1>
+
+<ul>
+    {% for tournament in tournaments %}
+        <li>
+            <p>{{ tournament.name }}</p>
+            <ul>
+                {% for fighter in tournament.fighters.all %}
+                    <li>{{ fighter.alias }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+</ul>
+
+<h1>Combates</h1>
+
+<ul>
+    {% for combat in combats %}
+        <li>{{ combat.date }} - {{ combat.winner.alias }} vs {{ combat.loser.alias }}</li>
+    {% endfor %}
+</ul>
+
+<h1>Ranking de luchadores</h1>
+
+<ul>
+    {% for fighter in fighters %}
+        <li>{{ fighter.alias }} ({{ fighter.alias }} combates ganados)</li>
+    {% endfor %}
+</ul>
+
+<img src="{% static "image.png" %}" width="100"/>
+<img src="{% static "sub/image2.jpg" %}" width="100"/>
+<img src="{% static "user.png" %}" width="100"/>
+
+</body>
+</html>
