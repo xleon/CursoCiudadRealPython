@@ -6,12 +6,18 @@ CATEGORIES = (
     (2, 'Pesado'),
 )
 
+GENDERS = (
+    ('male', 'Masculino'),
+    ('female', 'Femenino')
+)
+
 
 class Fighter(models.Model):
     alias = models.CharField('Alias', max_length=20)
     skills = models.IntegerField(default=0)
     force = models.IntegerField(default=0)
     resistance = models.IntegerField(default=0)
+    gender = models.CharField('Sexo', max_length=6, choices=GENDERS, default='female')
 
     def __str__(self):
         return self.alias
