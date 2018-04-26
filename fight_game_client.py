@@ -1,15 +1,11 @@
 """
-- Crear Player
-- Actualizar player
-- Borrar player
-- Lista de players
+Este programa se comunica directamente con la API REST que hemos creado en el proyecto django para:
+1. Pedir lista de torneos y elegir uno
+2. Pedir lista de usuarios 
+3. Guardar historial de combates
 
-- Crear torneo
-- Lista de torneos
-
-- Crear combate
-- Lista de combates
-
+La manera de llamar métodos REST se hace con la librería "requests" de python.
+Para que pueda funcionar, el servidor de django debe estar levantado en la url http://127.0.0.1:8000
 """
 
 from colorama import init, Fore, Back, Style
@@ -81,14 +77,15 @@ class FightGame:
         print('Esc. Salir\n')
 
     def __status(self):
-        print('---------------------------------------------------------------------------')
+        separator = '---------------------------------------------------------------------------'
+        print(separator)
         print(Fore.WHITE + 'Id'.ljust(5)
               + ' | ' + 'Nombre'.ljust(22)
               + ' | ' + 'Gender'.ljust(10)
               + ' | ' + 'Vidas'.ljust(7)
               + ' | ' + 'Poder'.ljust(7)
               + ' | ' + 'Gemas'.ljust(7))
-        print('---------------------------------------------------------------------------')
+        print(separator)
 
         players_sorted = sorted(self.players, key=lambda x: x.power, reverse=True)
         players_sorted = sorted(players_sorted, key=lambda x: x.lives, reverse=True)
@@ -103,7 +100,7 @@ class FightGame:
                 str(p.power).ljust(7),
                 str(p.gems).ljust(7)
             ))
-        print(Fore.WHITE + '---------------------------------------------------------------------------')
+        print(Fore.WHITE + separator)
 
     def __get_tournaments(self):
         try:
