@@ -23,7 +23,7 @@
   - Llamadas http
   - Imprimir con colores en la consola
   - Control de errores con try-except
-- Introducción a la programación orientada a objetos on python
+- Introducción a la programación orientada a objetos en python
   - Clases e instancias de clase
   - Herencia y herencia múltiple
   - Encapsulación con métodos privados
